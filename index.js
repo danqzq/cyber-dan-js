@@ -11,7 +11,7 @@ db.users = new Datastore('database/users.db');
 db.users.loadDatabase();
 
 const client = new Client({
-    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessageReactions],
+    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMembers, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessageReactions],
     partials: [Partials.Message, Partials.Channel, Partials.Reaction],
 })
 
