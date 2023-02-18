@@ -11,7 +11,8 @@ db.users = new Datastore('database/users.db');
 db.users.loadDatabase();
 
 const client = new Client({
-    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMembers, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessageReactions],
+    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessageReactions, GatewayIntentBits.GuildPresences],
     partials: [Partials.Message, Partials.Channel, Partials.Reaction],
 })
 
@@ -56,4 +57,5 @@ client.once(Events.ClientReady, c => {
 keepAlive()
 client.login(secrets.token).then(() => {
     console.log("Login attempted.");
+    client.user.setPresence({ activities: [{ name: 'HELLGRINDER' }] });
 })
